@@ -1,0 +1,40 @@
+@charset "utf-8";
+.topblock {
+    background:#ffaaaa;
+    color:#000;
+}
+.mainblock {
+    background:#fff;
+    color:#000;
+    padding-bottom:10px;
+}
+.bottomblock {
+    background:#ddd;
+    color:#000;
+}
+.menublock {
+    background:#eee;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color:#333;
+    border-width: 2px;
+    height:60px;
+    padding-left:20px;
+    color:#000;
+}
+.menublock:hover{
+    background:#ddd;
+}
+.menublock:active{
+    background:#ccc;
+}
+.disabled {
+    background:#dadada;
+    color:#aaa;
+}
+.disabled:active{
+    background:#faa;
+}
+div span{
+    display:flex;
+}

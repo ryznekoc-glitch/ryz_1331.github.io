@@ -1,0 +1,25 @@
+@charset "utf-8";
+input{
+    width:90%;
+    height:40px;
+    font-size:25px;
+    padding-left:10px;
+}
+.enter{
+    font-size:20px;
+    margin-top:30px;
+    margin-left: 80%;
+    width:100px;
+    height:30px;
+
+}
+.smallbutton{
+    width:150px;
+    height:20px;
+    font-size:10px;
+}
+.input{
+    border-color: #000;
+    border-radius: 10px;
+    border-width: 3px;
+}

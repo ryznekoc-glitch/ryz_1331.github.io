@@ -1,0 +1,58 @@
+@charset "utf-8";
+.menubutton{
+    width:100px;
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border: none;
+    background:#fcbf00;
+}
+.menubutton-TD{
+    /*base*/
+    width:100px;
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border:none;
+    /*option*/
+    background:#ffaaaa;
+
+}
+.menubutton:hover{
+    width:100px;
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border: none;
+    background:#ffd952;
+}
+.menubutton-TD:hover{
+    /*base*/
+    width:100px;
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border:none;
+    /*option*/
+    background:#ffe0e0;
+
+}
+.menubutton:active{
+    width:100px;
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border: none;
+    background:#d4a000;
+}
+.menubutton-TD:active{
+    /*base*/
+    width:100px;
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border:none;
+    /*option*/
+    background:#e08e8e;
+
+}
