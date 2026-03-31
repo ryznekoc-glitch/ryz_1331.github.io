@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* this stylesheet is recommanded to the all html */
+html {
+    /*background-color:#efe2c5;*/
+    background-color:#adadad;
+    color:#000000;
+    font-family:"ヒラギノ角ゴシック";
+}
+header h1{
+    color:#000;
+}
+.block {
+    /*marginは Top Right Bottom Left の順になる */
+    margin:0% 20% 0% 20%;
+    padding:3%;
+}
+.topblock{
+    margin-top:3%;
+    margin-bottom:0px;
+    background:#90eeff;
+    border-radius: 60px 60px 0px 0px;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+.mainblock{
+    background:#fff;
+    margin-top:0%;
+    margin-bottom:0px;
+    padding-top: 3px;
+}
+.bottomblock{
+    background:#666;
+    color:#fff;
+    padding-top:1%;
+    padding-bottom:3%;
+    border-radius: 0px 0px 60px 60px;
+    margin-top:0px;
+}
+h1{
+    font-size:50px;
+}
+h6{
+    font-size:20px;
+}
+.bottomblock h6 {
+    margin: 0;
+}
+/* 一番上の要素の上の線を太くする */
+.menublock:first-child {
+    border-top-width: 4px; /* 2pxの2倍 */
+}
+
+/* 一番下の要素の下の線を太くする */
+.menublock:last-child {
+    border-bottom-width: 4px; /* 2pxの2倍 */
+}

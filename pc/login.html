@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>ログイン - 1331P</title>
+        <link rel="stylesheet" href="../css/pclogin.css">
+        <link rel="stylesheet" href="../css/pcbase.css">
+        <!---なんか忘れてるかも-->
+    </head>
+    <body>
+        <div class="topblock block">
+            <h1>ログイン</h1>
+        </div>
+        <div class="mainblock block">
+            <h6>UserID</h6>
+            <input type="text" class="input" id="userId">
+            <h6>PassWord</h6>
+            <input type="text" class="input" id="password">
+            <br>
+            <span>
+                <input value="ログイン" class="enter" onclick="verify()" type="button" id="enter">
+            </span>
+        </div>
+        <div class="bottomblock block">
+            <p>PC版</p>
+            <span class="flex">
+                <input class="smallbutton" type="button" onclick='location.href="../sp/login.html"'' value="モバイル版">
+                <input class="smallbutton" type="button" onclick='location.href="../pc/login.html"'' value="PC版" disabled>
+            </span>
+        </div>
+        <script type="text/javascript" src="../js/login.js"></script>
+    </body>
+</html>

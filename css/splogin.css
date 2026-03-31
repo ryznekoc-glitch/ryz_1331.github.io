@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* this stylesheet is only recommanded to index.html */
+html {
+    /*background-color:#efe2c5;*/
+    background-color:#adadad;
+    color:#000000;
+    font-family:"ヒラギノ角ゴシック";
+}
+header h1{
+    color:#000;
+}
+div{
+    margin:0% 3% 0% 3%;
+    padding:3%;
+}
+.topblock{
+    margin-top:3%;
+    background:#90eeff;
+    border-radius: 60px 60px 0px 0px;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+.mainblock{
+    background:#fff;
+    margin-top:0%;
+    padding-top: 3px;
+}
+.bottomblock{
+    background:#666;
+    color:#fff;
+    padding-top:1%;
+    padding-bottom:3%;
+    border-radius: 0px 0px 15px 15px;
+}
+h1{
+    font-size:70px;
+}
+h6{
+    font-size:30px;
+}
+input{
+    width:300px;
+    height:50px;
+    font-size:30px;
+}
+.submitbutton{
+    padding-left:500px;
+}
+.smallbutton{
+    width:150px;
+    height:50px;
+    font-size:20px;
+}
+.input{
+    border-color: #000;
+    border-radius: 20px;
+    border-width: 3px;
+}
