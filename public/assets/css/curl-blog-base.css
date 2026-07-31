@@ -1,0 +1,144 @@
+@charset "utf-8";
+.topblock {
+    background:#77c3f2;
+    color:#000000;
+}
+.mainblock {
+    background:#fff;
+    color:#000;
+    padding-bottom:10px;
+}
+
+
+.pagebtnblock {
+
+    background:#fff;
+    color:#000;
+    padding-bottom:10px;
+    display: flex;
+    /*width: 100%;*/ /* 必要に応じて幅を指定 */
+}
+
+.pagebtn {
+
+    color:#000;
+    padding-bottom:10px;
+    flex: 1; /* これで横幅が自動的に3等分になります */
+    height:30px;
+    background:#ddd;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #fff;
+    padding:3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pbrightest{
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+.pbleftest{
+    clip-path: polygon(0% 0% , 100% 0% , 100% 100% , 0% 100% , 10% 50%)
+}
+
+.pagebtn:hover{
+    background:#ccc;
+}
+.pagebtn:active{
+    background:#bbb;
+}
+
+*/
+
+
+.bottomblock {
+    background:#ddd;
+    color:#000;
+}
+.menublock {
+    background:#eee;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color:#333;
+    border-width: 1px;
+    height:60px;
+    padding-left:20px;
+    color:#000;
+    display: flex;
+}
+.menublock:hover{
+    background:#ddd;
+}
+.menublock:active{
+    background:#ccc;
+}
+
+/* 一番上の要素の上の線を太くする */
+.menublock:first-child {
+    border-top-width: 2px;
+}
+
+/* 一番下の要素の下の線を太くする */
+.menublock:last-child {
+    border-bottom-width: 2px;
+}
+span{
+    display:flex;
+}
+.title{
+    margin-left:30px;
+}
+.title , .date{
+    font-size:15px;
+    color:#000;
+    margin-top :18px;
+}
+.date {
+    width: 90px;
+    font-size: 14px;
+    white-space: nowrap; /* これを追加：改行を禁止する */
+}
+.smallfont{
+    font-size:13px;
+}
+img{
+    width: 305px;
+    height: auto;
+}
+.smallh1{
+    size:0px;
+}
+.longtitle{
+    font-size:43px;
+}
+/*----*/
+.disabled {
+    background:#dadada;
+    color:#aaa;
+}
+.disabled:active{
+    background:#faa;
+}
+
+.disabled .date{
+    color:#aaa;
+}
+.disabled .title{
+    color:#aaa;
+}
+/*----*/
+
+
+@media screen and (max-width: 480px) {
+    .title{
+        margin-left:20px;
+        /*font-size:10px;*/
+    }
+    .bottomblock p{
+        font-size:10px;
+    }
+    .topblock h1{
+        font-size:20px;
+    }
+}

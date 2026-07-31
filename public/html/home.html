@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>ホーム - 1331</title>
+        <link rel="icon" href="../assets/icon/favicon.png">
+        <link rel="stylesheet" href="../assets/css/base.css?v=0137">
+        <link rel="stylesheet" href="../assets/css/home.css?v=0138">
+    </head>
+    <body>
+        <div class="topblock block">
+            <h1>ホーム</h1>
+            <div class="accountdisplay" id="acc"></div>
+        </div>
+        <div class="pagebtnblock block">
+            <div class="pagebtn pbcenteronly" onclick="history.back()"><p>前のページに戻る</p></div>
+        </div>
+        <div class="mainblock block">
+            <h2>メニュー</h2>
+            <div class="menubutton-area">
+                <button class="menubutton-TD widebutton" onclick="location.href='../telac-home.html'">TELA-C日記<br><span style="font-size:10px;">(By TELA-C)</span></button>
+                <button class="menubutton-KD widebutton" onclick="location.href='../kikuzu-home.html'">木くずの日常<br><span style="font-size:10px;">(By 木くず)</span></button>
+                <button class="menubutton-TO widebutton" onclick="location.href='../telac-observing-log.html'">寺島観察日記<br><span style="font-size:10px;">(By RYZ_1331)</span></button>
+                <button class="menubutton-CD widebutton" onclick="location.href='../curl-home.html'" style="font-size:15px;">カールさんのくそ𝐿𝐼𝐹𝐸日記<br><span style="font-size:10px;">(By Curl)</span></button>
+                <button class="menubutton widebutton customad" onclick="location.href='./recad.html'">ネタ募集中<br>応募はこちらから</button>
+            </div>
+            <div class="custombutton-area">
+                <button class="custombutton widebutton" onclick="location.href='./foundbugs.html'" style="font-size:15px;">バグ・エラーを報告する</button>
+                <button class="custombutton" onclick="location.href='./changeip.html'" style="font-size:15px;">ユーザID・<br>パスワードを変更</button>
+                <button class="custombutton" onclick="logout()" style="font-size:15px;">ログアウト<br>する</button>
+            </div>
+            <p title="hide this message" onclick="reset()" style="color:#ff0000; background:#ffdddd;" id="warnMessages"></p>
+        </div>
+        <div class="bottomblock block">
+            <p>Powered by : Github , TELA-C , Kikuzu , Curl , RYZ_1331</p>
+            <p>Copyright © 2026 RYZ_1331 - All rights reserved.</p>
+        </div>
+        <script src="../assets/js/home.js"></script>
+    </body>
+</html>

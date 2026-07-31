@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* this stylesheet is recommanded to the all html */
+html {
+    /*background-color:#efe2c5;*/
+    background-color:#eeeeee;
+    color:#000000;
+    font-family:"ヒラギノ角ゴシック";
+}
+header h1{
+    color:#000;
+}
+.block {
+    /*marginは Top Right Bottom Left の順になる */
+    margin:0% 20% 0% 20%;
+    padding:3%;
+}
+.topblock{
+    margin-top:3%;
+    margin-bottom:0px;
+    background:#fcbf00;
+    border-radius: 60px 60px 0px 0px;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+.mainblock{
+    background:#fff;
+    margin-top:0%;
+    margin-bottom:0px;
+    padding-top: 3px;
+}
+.bottomblock{
+    background:#666;
+    color:#fff;
+    padding-top:1%;
+    padding-bottom:3%;
+    border-radius: 0px 0px 60px 60px;
+    margin-top:0px;
+}
+h1{
+    font-size:50px;
+}
+h6{
+    font-size:20px;
+}
+.bottomblock h6 {
+    margin: 0;
+}
+/* 一番上の要素の上の線を太くする */
+.menublock:first-child {
+    border-top-width: 4px; /* 2pxの2倍 */
+}
+
+/* 一番下の要素の下の線を太くする */
+.menublock:last-child {
+    border-bottom-width: 4px; /* 2pxの2倍 */
+}
+
+
+
+
+/*----------------------------------------*/
+.pagebtnblock {
+
+    background:#fff;
+    color:#000;
+    padding-bottom:10px;
+    display: flex;
+    /*width: 100%;*/ /* 必要に応じて幅を指定 */
+}
+/*----------------------------------------*/
+.pagebtn {
+
+    color:#000;
+    padding-bottom:10px;
+    flex: 1; /* これで横幅が自動的に3等分になります */
+    height:30px;
+    background:#ddd;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #fff;
+    padding:3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pbrightest{
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+.pbleftest{
+    clip-path: polygon(0% 0% , 100% 0% , 100% 100% , 0% 100% , 10% 50%)
+}
+.pbcenteronly{
+    clip-path:polygon(0% 0% , 95% 0% , 100% 50% , 95% 100% , 0% 100% , 5% 50%)
+}
+
+.pagebtn:hover{
+    background:#ccc;
+}
+.pagebtn:active{
+    background:#bbb;
+}
+
+/*----------------------------------------*/
+
+
+.disabled {
+    background:#dadada;
+    color:#aaa;
+}
+
+
+
+/* 画面幅が480px以下（一般的なスマホ）の場合 */
+@media screen and (max-width: 480px) {
+    /* 1. 左右の余白を削って、横幅を広く使う */
+    .block {
+        margin: 0% 3% !important; /* 20%から3%に減らす */
+        padding: 5% 7%;           /* 上下の余白を少し調整 */
+    }
+
+    /* 2. 見出しが大きすぎるのを防ぐ */
+    h1 {
+        font-size: 24px;
+    }
+
+    /* 3. menublockの「高さ」を固定せず、中身に合わせる（または低くする） */
+    .menublock {
+        height: auto;       /* 固定60pxをやめて、中身に合わせる */
+        min-height: 50px;   /* 最低限の押しやすさは確保 */
+        padding: 10px 15px; /* 上下の余白で高さを出す */
+    }
+
+    /* 4. 日付の幅をスマホ用に少し狭める */
+    .date {
+        width: 90px;
+        font-size: 14px;
+    }
+    iframe{
+        width:300px;
+        height:800px;
+    }
+    .pagebtn p{
+        font-size :11px;
+    }
+}

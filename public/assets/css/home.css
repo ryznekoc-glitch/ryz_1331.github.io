@@ -1,0 +1,138 @@
+@charset "utf-8";
+.menubutton{
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border: none;
+    background:#fcbf00;
+    color:#000;
+    font-weight:bolder;
+}
+.menubutton-TD{
+    /*base*/
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border:none;
+    /*option*/
+    background:#EF7DB0;
+    color:#000;
+    font-weight:bolder;
+
+}
+.menubutton-KD{
+    /*base*/
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border:none;
+    /*option*/
+    background:#6bd42f;
+    color:#000;
+    font-weight:bolder;
+
+}
+.menubutton-TO{
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border:none;
+    /*option*/
+    background:#fcbf00;
+    color:#000;
+    font-weight:bolder;
+}
+.menubutton-CD{
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border:none;
+    /*option*/
+    background:#77c3f2;
+    color:#000;
+    font-weight:bolder;
+}
+.customad{
+    background:#0000ff;
+    color:#fff;
+}
+
+.menubutton:hover{
+    background:#ffd952;
+}
+.menubutton-TD:hover{
+    background:#ffe0e0;
+}
+.menubutton-KD:hover{
+    background:#8bf44f;
+}
+.menubutton-TO:hover{
+    background:#ffd952;
+}
+.menubutton-CD:hover{
+    background:#b2e7ff;
+}
+.customad:hover{
+    background:#5555ff;
+}
+.menubutton:active{
+    background:#d4a000;
+}
+.menubutton-TD:active{
+    background:#e08e8e;
+}
+.menubutton-KD:active{
+    background:#4bb40f;
+}
+.menubutton-TO:active{
+    background:#d4a000;
+}
+.menubutton-CD:active{
+    background:#4597cc;
+}
+.customad:active{
+    background:#0000aa;
+}
+
+.custombutton{
+    width:100px;
+    height:100px;
+    font-size:20px;
+    border-radius: 20px;
+    border: none;
+    background:#ccc;
+    color:#000;
+}
+.custombutton:hover{
+    background:#ddd;
+    color:#000;
+}
+.custombutton:active{
+    background:#aaa;
+    color:#000;
+}
+.menubutton, .menubutton-TD , .custombutton , .menubutton-KD , .menubutton-TO , .menubutton-CD{
+    margin-top: 5px;
+    vertical-align: top; /* これを追加！ */
+}
+.menubutton-area {
+    background:#eee;
+    width:207px;
+    height:auto;
+    margin-top:30px;
+    padding:10px;
+    border-radius: 30px;
+    padding-bottom:15px;
+}
+.custombutton-area {
+    background:#aaa;
+    width:207px;
+    height:auto;
+    margin-top:30px;
+    padding:10px;
+    border-radius: 30px;
+    padding-bottom:15px;
+}
+.widebutton{
+    width:205px;
+}

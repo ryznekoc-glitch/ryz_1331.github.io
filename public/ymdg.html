@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width = device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./assets/css/base.css">
+        <link rel="stylesheet" href="./assets/css/ymdg.css">
+        <title>ホーム - 赤点化計画</title>
+    </head>
+    <body>
+        <div class="topblock block">
+            <h1 class="longtitle">赤点化計画</h1>
+        </div>
+        <div class="mainblock block">
+            <p id="warnMessages" style="color:#ff0000;"></p>
+            <p>赤点:</p>
+            <input id="failingScore" type="number" value="40" style="font-size:15px; width:100px; height:30px;">
+            <button onclick="ref()" style="font-size:12px; width:120px; height:40px;">テストを受ける</button>
+            <p id="dispResult">N/A</p>
+            <p id="dispFallingScores">N/A</p>
+            <p id="dispScores">N/A</p>
+            <button onclick="res()" style="font-size:9px; width:120px; height:40px;">初期値に戻す</button>
+        </div>
+        <div class="bottomblock block">
+            <p>Powered by : Github , Cherry Blossom , RYZ_1331</p>
+        </div>
+        <script>
+            function ref() {
+                document.getElementById("warnMessages").innerText = " "
+
+                let rev = document.getElementById("failingScore").value
+
+                if (rev === "" || rev < 0 || 100 < rev) {
+                    document.getElementById("failingScore").value = "40"
+
+                    let warnText = ""
+
+                    if (rev === "") {
+                        warnText = '変数 "failingScore" が定義されなかったため自動的に初期値 "40" が代入されました。'
+                    } else if (rev < 0 || 100 < rev) {
+                        warnText = '変数 "failingScore" に格納されている値 "' + rev + '" が条件 "0 ≦ n ≦ 100" を満たさなかったため自動的に初期値 "40" が代入されました。'
+                    } else {
+                        warnText = '不明なエラーにより適切な処理を行えなかった可能性があります。'
+                    }
+                    
+
+
+
+                    console.log(warnText)
+                    document.getElementById("warnMessages").innerText = warnText
+                }
+
+
+                let failingScore = document.getElementById("failingScore").value //赤点を変数fallingScoreに代入
+                console.log("maxFailingScore is " + failingScore) //fallingScoreを表示
+                let randomScore = Math.floor(Math.random() * 101) //0 to 100の中から乱数を変数randomScoreに代入
+                console.log("currentScore is " + randomScore) //randomScoreに代入
+                let result = "" //変数resultを定義
+                if (failingScore <= randomScore) { //赤点選別
+                    result = "合格" //resultに合格を代入
+                } else {
+                    result = "赤点" //resultに赤点を代入
+                }
+
+                let dResult = "　結　果　 : " + result
+                let dRandomScore = "今回の点数 : " + randomScore
+                let dFailingScore = "　赤　点　 : " + failingScore
+                
+
+                document.getElementById("dispResult").innerText = dResult
+                document.getElementById("dispScores").innerText = dRandomScore
+                document.getElementById("dispFallingScores").innerText = dFailingScore
+                
+            }
+
+            function res() {
+                document.getElementById("failingScore").value = 40
+                document.getElementById("dispResult").innerText = "N/A"
+                document.getElementById("dispFallingScores").innerText = "N/A"
+                document.getElementById("dispScores").innerText = "N/A"
+            }
+        </script>
+    </body>
+</html>

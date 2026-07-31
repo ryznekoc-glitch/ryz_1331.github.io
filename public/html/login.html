@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>ログイン - 1331</title>
+        <link rel="stylesheet" href="../assets/css/base.css">
+        <link rel="stylesheet" href="../assets/css/login.css">
+        <!---なんか忘れてるかも-->
+    </head>
+    <body>
+        <div class="topblock block">
+            <h1>ログイン</h1>
+        </div>
+        <div class="mainblock block">
+            <h6>ユーザID</h6>
+            <p>デフォルトのユーザIDは誕生日(4桁)です</p>
+            <input type="text" class="input" id="userId">
+            <h6>パスワード</h6>
+            <p>デフォルトのパスワードはパスワードは名前のイニシャル(ローマ小文字)+誕生日(4桁)です</p>
+            <input type="text" class="input" id="password">
+            <br>
+            <span>
+                <br>
+                <a href="../html/changeip.html">ユーザIDまたはパスワードを忘れた</a>
+                <input value="ログイン" class="enter" onclick="verify()" type="button" id="enter">
+            </span>
+        </div>
+        <div class="bottomblock block">
+            <p>Powered by : Github , RYZ_1331</p>
+            <p>Copyright © 2026 RYZ_1331 - All rights reserved.</p>
+        </div>
+        <!--↓必ずusers.jsを読み込んだ後にlogin.jsを読ませる↓-->
+        <script type="text/javascript" src="../assets/js/users.js"></script>
+        <script type="text/javascript" src="../assets/js/login.js"></script>
+    </body>
+</html>
