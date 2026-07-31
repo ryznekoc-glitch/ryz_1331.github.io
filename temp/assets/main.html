@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <script>
+            let loadedPasscodeJs = false
+        </script>
+        <title>2026/07/30 - クラス会写真ダウンロード</title>
+        <link rel="stylesheet" href="../../assets/css/telac-observing-log-base.css">
+        <link rel="stylesheet" href="../../assets/css/home.css">
+        <link rel="stylesheet" href="../../assets/css/base.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .topblock{
+                background-color:#DDD;
+            }
+            .topblock h1 {
+                font-size:25px;
+            }
+            input , .input{
+                width:90%;
+                height:30px;
+                font-size:20px;
+                padding-left:10px;
+                border-color: #000;
+                background:#fff;
+            }
+        </style>
+        <script src="./passcode.js"></script>
+        <script src="./imageSelector.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script src="./download.js"></script>
+    </head>
+    <body>
+        <div class="topblock block">
+            <h1>クラス会写真ダウンロード</h1>
+            <p>詳細は一番下のクソ長い留意事項を読んでください</p>
+        </div>
+        <div class="mainblock block">
+            <!--Attend Number-->
+            <div>
+                <h2>出席番号</h2>
+                <p>あなたの出席番号を選択してください</p>
+                <select id="attendNumber" class="input">
+                    <option value="99" selected disabled>--1つ選択してください--</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                </select>
+            </div>
+
+            <!--Shareing Passcode-->
+            <div>
+                <h2>パスコード</h2>
+                <p>LINEで共有されたパスコードを入力してください</p>
+                <p>コピペで構いません</p>
+                <input id="passcode" type="text">
+            </div>
+            
+            <!--Download Button-->
+            <div>
+                <h2>ダウンロード</h2>
+                <p>ダウンロード後の操作については下記のクソ長い留意事項を読んでください</p>
+                <button class="custombutton" style="width:200px; height:50px;" onclick="pushDownload()">ダウンロードを開始</button>
+            </div>
+        </div>
+        <div class="bottomblock block">
+            <h5>留意事項</h5>
+            <p style="color:#0f0;">プライバシーを重要視したときにクラスLINEで全員が全ての写真を見ることができるのはよくねえよなあと思ったのでこういう形で共有することにしました</p>
+            <p style="color:#0f0;">動画アルバムに入れれないし</p>
+            <p style="color:#0f0;">かといってLINEで1人ずつ送るのもめんどくさいのでセルフ方式を採用しました</p>
+            <p style="color:#0f0;">クレームや質問があるときは龍三までどうぞ</p>
+            <p>自分が写っている写真のみダウンロードできます</p>
+            <p>一括でダウンロードされ、iPhoneは「ファイル」というアプリに圧縮された状態で保存されると思います。pictures.zipと書かれているやつをタップしてください<br>ようわからんときは言ってください<br>Androidは分かりません</p>
+            <p>このページはすべて龍三が独自に作成したものであり、第三者による画像の閲覧は発生していません</p>
+            <p>このページや内部ファイルは他のページと切り離されています</p>
+            <p>配置がズレてたり画面がバグったりするかもしれませんがダウンロードできる限り許してください</p>
+            <p>ダウンロードできないときは言ってください</p>
+        </div>
+
+        <script>
+            let allow = 0
+            function pushDownload() {
+                let result = 0
+                let errorMessages = ""
+                if (loadedPasscodeJs == false) {
+                    errorMessages = errorMessages + "'passcode.js' が読み込まれていません\n";
+                    errorMessages = errorMessages + "ページを再読み込みしてください\n";
+                    result = result-1
+                }
+
+                const attendNumberRaw = document.getElementById('attendNumber');
+                const attendNumber = attendNumberRaw.value
+                const passcode = document.getElementById('passcode').value
+
+                if (attendNumber == "notChosen") {
+                    errorMessages = errorMessages + "出席番号を選択してください\n";
+                    result = result-1
+                }
+                if (passcode == "") {
+                    errorMessages = errorMessages + "パスコードを入力してください\n";
+                    result = result-1
+                }else if(passcode !=`95${attendNumber}56`) {
+                    errorMessages = errorMessages + "パスコードが正しくありません\n";
+                    result = result-1
+                }
+                if (result === 0) {
+                    allow = 1
+                }
+
+                //Download処理
+                if (allow == 1) {
+                    startDownload(attendNumber)
+                }
+
+
+                if (errorMessages != "") {
+                alert(errorMessages)
+                }
+            }
+        </script>
+    </body>
+</html>
