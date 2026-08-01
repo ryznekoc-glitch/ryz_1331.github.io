@@ -152,7 +152,9 @@
 
 
                 if (errorMessages != "") {
-                alert(errorMessages)
+                    errorMessages = errorMessages + "解決できない場合はページの更新を試してください\n"
+                    errorMessages = errorMessages + "それでも解決できない場合はスクショを個人LINEかインスタDMで送ってください"
+                    alert(errorMessages)
                 }
             }
         </script>
